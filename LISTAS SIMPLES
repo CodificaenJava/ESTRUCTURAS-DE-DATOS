@@ -1,0 +1,99 @@
+public class Main {
+     public static void main(String[] args) {
+    Lista lista=new Lista();
+         System.out.println("Lista");
+        lista.insertar(5);
+        lista.insertar(10);
+        lista.insertar(7);
+        lista.recorrer();
+         System.out.println("INSERTAR FINAL");
+        lista.insertarFinal(4);
+        lista.recorrer();
+         System.out.println("INSERTAR INICIO");
+         lista.insertarInicio(9);
+         lista.recorrer();
+         System.out.println("LISTA ELIMINAR INICIO");
+        lista.eliminarInicio(7);
+        lista.recorrer();
+         System.out.println("LISTA ELIMINAR FINAL");
+         lista.eliminarFinal(4);
+         lista.recorrer();
+}
+public class Nodo {
+    int dato;
+    Nodo siguiente;
+}
+}
+public class Lista {
+     Nodo inicio=null;
+     boolean vacia(){//comprobar si esta vacia
+         return inicio==null;
+     }
+        
+        void insertar(int dato){
+            Nodo nuevo=new Nodo();
+            nuevo.dato=dato;
+            nuevo.siguiente=inicio;
+            inicio=nuevo;
+        }
+        
+        void recorrer(){
+            Nodo aux=inicio;
+            while(aux!=null){
+                System.out.println(aux.dato);
+                aux=aux.siguiente;
+            }
+}
+        void insertarFinal(int dato){
+            Nodo aux=inicio;
+            if(aux!=null)
+            {
+              while(aux.siguiente!=null){
+                aux=aux.siguiente;
+            }
+              Nodo nuevo=new Nodo();
+              nuevo.dato=dato;
+              aux.siguiente=nuevo;
+            }else{
+            Nodo nuevo=new Nodo();
+            nuevo.dato=dato;
+            nuevo.siguiente=inicio;
+            inicio=nuevo;
+            }
+        }
+        void insertarInicio(int dato){
+            Nodo nuevo = new Nodo();
+            if (vacia()) {
+            inicio = nuevo;
+        } else {
+            Nodo aux = inicio;
+            while (aux.siguiente != null) {
+                aux = aux.siguiente;
+            }
+            aux.siguiente=nuevo;
+              //  System.out.println(""+nuevo);
+        }
+        }
+        void eliminarInicio(int dato){
+                if(inicio!=null){
+            Nodo aux = inicio;
+            aux = aux.siguiente;
+           // aux.anterior = null;
+            inicio.siguiente=null;
+            inicio = aux;
+                }
+        }
+        
+ void eliminarFinal(int dato){
+        Nodo aux = null;   
+     if(aux != null){
+         
+           // aux = fin.anterior;
+            aux.siguiente = null;
+           // fin.anterior = null;
+            inicio.siguiente= null;
+            inicio =aux;
+        }
+    }
+ 
+}
