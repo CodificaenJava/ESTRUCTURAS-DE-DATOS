@@ -1,0 +1,22 @@
+public class Main {
+     public static void main(String[] args) {
+    Lista lista=new Lista();
+         System.out.println("Lista");
+        lista.insertar(5);
+        lista.insertar(10);
+        lista.insertar(7);
+        lista.recorrer();
+         System.out.println("INSERTAR FINAL");
+        lista.insertarFinal(4);
+        lista.recorrer();
+         System.out.println("INSERTAR INICIO");
+         lista.insertarInicio(9);
+         lista.recorrer();
+         System.out.println("LISTA ELIMINAR INICIO");
+        lista.eliminarInicio(7);
+        lista.recorrer();
+         System.out.println("LISTA ELIMINAR FINAL");
+         lista.eliminarFinal(4);
+         lista.recorrer();
+}
+}
