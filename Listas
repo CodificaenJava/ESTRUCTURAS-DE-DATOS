@@ -1,0 +1,74 @@
+ */
+public class Lista {
+     Nodo inicio=null;
+     boolean vacia(){//comprobar si esta vacia
+         return inicio==null;
+     }
+        
+        void insertar(int dato){
+            Nodo nuevo=new Nodo();
+            nuevo.dato=dato;
+            nuevo.siguiente=inicio;
+            inicio=nuevo;
+        }
+        
+        void recorrer(){
+            Nodo aux=inicio;
+            while(aux!=null){
+                System.out.println(aux.dato);
+                aux=aux.siguiente;
+            }
+}
+        void insertarFinal(int dato){
+            Nodo aux=inicio;
+            if(aux!=null)
+            {
+              while(aux.siguiente!=null){
+                aux=aux.siguiente;
+            }
+              Nodo nuevo=new Nodo();
+              nuevo.dato=dato;
+              aux.siguiente=nuevo;
+            }else{
+            Nodo nuevo=new Nodo();
+            nuevo.dato=dato;
+            nuevo.siguiente=inicio;
+            inicio=nuevo;
+            }
+        }
+        void insertarInicio(int dato){
+            Nodo nuevo = new Nodo();
+            if (vacia()) {
+            inicio = nuevo;
+        } else {
+            Nodo aux = inicio;
+            while (aux.siguiente != null) {
+                aux = aux.siguiente;
+            }
+            aux.siguiente=nuevo;
+              //  System.out.println(""+nuevo);
+        }
+        }
+        void eliminarInicio(int dato){
+                if(inicio!=null){
+            Nodo aux = inicio;
+            aux = aux.siguiente;
+           // aux.anterior = null;
+            inicio.siguiente=null;
+            inicio = aux;
+                }
+        }
+        
+ void eliminarFinal(int dato){
+        Nodo aux = null;   
+     if(aux != null){
+         
+           // aux = fin.anterior;
+            aux.siguiente = null;
+           // fin.anterior = null;
+            inicio.siguiente= null;
+            inicio =aux;
+        }
+    }
+ 
+}
